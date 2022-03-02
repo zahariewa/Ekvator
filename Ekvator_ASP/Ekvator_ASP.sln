@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ekvator_ASP", "Ekvator_ASP\Ekvator_ASP.csproj", "{769DC101-C76E-4E13-A94B-B6033C5F473F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{769DC101-C76E-4E13-A94B-B6033C5F473F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769DC101-C76E-4E13-A94B-B6033C5F473F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769DC101-C76E-4E13-A94B-B6033C5F473F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769DC101-C76E-4E13-A94B-B6033C5F473F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCAF3973-3C58-4EBE-A731-2864485D8C28}
+	EndGlobalSection
+EndGlobal
