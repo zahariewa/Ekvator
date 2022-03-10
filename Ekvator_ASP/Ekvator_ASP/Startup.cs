@@ -1,4 +1,5 @@
 using Ekvator_ASP.Data;
+using Ekvator_ASP.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,6 +18,8 @@ namespace Ekvator_ASP
 {
     public class Startup
     {
+        private object options;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,13 +35,24 @@ namespace Ekvator_ASP
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
             services.AddControllersWithViews();
-        }
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 0;
+            });
+            }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
