@@ -9,6 +9,8 @@ namespace Ekvator_ASP.Data
 {
     public class ApplicationDbContext : IdentityDbContext <ApplicationUser>
     {
+        public DbSet<Excursion> Excursions { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
