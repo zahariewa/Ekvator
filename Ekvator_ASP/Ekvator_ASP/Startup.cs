@@ -1,5 +1,6 @@
 using Ekvator_ASP.Data;
 using Ekvator_ASP.Entities;
+using Ekvator_ASP.Infrastricture;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,6 +41,7 @@ namespace Ekvator_ASP
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.AddControllersWithViews();
+            services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -54,6 +56,8 @@ namespace Ekvator_ASP
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.PrepareDatabase().Wait();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
