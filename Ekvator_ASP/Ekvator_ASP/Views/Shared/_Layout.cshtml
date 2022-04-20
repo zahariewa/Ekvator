@@ -27,12 +27,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Excursions" asp-action="Bul">Екскурзии в страната</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Excursions" asp-action="Abroad">Екскурзии в чужбина</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
                         </li>
-                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                        {
+                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Client")))
+                        { 
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Client">Contacts</a>
+                    </li>
+                        }
+
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
                     <li class="nav-item active">
                         <div class="dropdown show">
                             <a class="nav-link active dropdown-toggle" href="#"
@@ -50,7 +60,7 @@
                         </div>
                     </li>
 }
-                    </ul>
+                                </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>

@@ -28,6 +28,12 @@ namespace Ekvator_ASP.Controllers
         {
             return View(await _context.Excursions.Where(x=>x.Destination=="България").ToListAsync());
         }
+        
+        public async Task<IActionResult> Abroad()
+        {
+            return View(await _context.Excursions.Where(x => x.Destination != "България").ToListAsync());
+        }
+
 
         // GET: Excursions/Details/5
         public async Task<IActionResult> Details(int? id)
