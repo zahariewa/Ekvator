@@ -23,6 +23,14 @@ namespace Ekvator_ASP.Controllers
             return View();
         }
 
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+        public IActionResult ForUs()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
