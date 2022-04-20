@@ -20,32 +20,36 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                           Home
-                                
+                                Home
+
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Excursions" asp-action="Bul">Екскурзии в страната</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
                         </li>
                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                         {
-                            <li class="nav-item active">
-                                <div class="dropdown show">
-                                    <a class="nav-link active dropdown-toggle" href="#"
-                                       id="dropdownMenuLink"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true"
-                                       aria-expanded="false">
-                                        Offers
-                                    </a>
+                    <li class="nav-item active">
+                        <div class="dropdown show">
+                            <a class="nav-link active dropdown-toggle" href="#"
+                               id="dropdownMenuLink"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                Excursions
+                            </a>
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="/Offers/Index">All</a>
-                                        <a class="dropdown-item" href="/Offers/Create">Add</a>
-                                    </div>
-                                </div>
-                            </li>
-                        }
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Excursions/Index">All</a>
+                                <a class="dropdown-item" href="/Excursions/Create">Add</a>
+                            </div>
+                        </div>
+                    </li>
+}
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
