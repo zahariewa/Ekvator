@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ekvator_ASP.Data;
 using Ekvator_ASP.Entities;
+using System.Security.Claims;
 
 namespace Ekvator_ASP.Controllers
 {
@@ -61,6 +62,8 @@ namespace Ekvator_ASP.Controllers
         {
             if (ModelState.IsValid)
             {
+                var currentUserId= this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                reservation.UserId = currentUserId;
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
