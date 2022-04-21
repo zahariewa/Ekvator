@@ -64,7 +64,7 @@ namespace Ekvator_ASP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Destination,Description,StartDate,EndDate,Transport,Price,Capacity")] Excursion excursion)
+        public async Task<IActionResult> Create([Bind("Id,Destination,Description,StartDate,EndDate,Transport,Price,Capacity,Image")] Excursion excursion)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Ekvator_ASP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Destination,Description,StartDate,EndDate,Transport,Price,Capacity")] Excursion excursion)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Destination,Description,StartDate,EndDate,Transport,Price,Capacity,Image")] Excursion excursion)
         {
             if (id != excursion.Id)
             {

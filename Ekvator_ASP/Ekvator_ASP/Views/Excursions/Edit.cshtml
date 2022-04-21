@@ -7,6 +7,11 @@
 <h1>Edit</h1>
 
 <h4>Excursion</h4>
+<style>
+    body {
+        background-color: bisque;
+    }
+</style>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -47,6 +52,11 @@
                 <label asp-for="Capacity" class="control-label"></label>
                 <input asp-for="Capacity" class="form-control" />
                 <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
